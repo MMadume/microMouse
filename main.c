@@ -1,6 +1,8 @@
 ///
 /// @file       main.c
-/// @author     Kyeong Soo (Joseph) Kim <k.s.kim@swansea.ac.uk>
+/// @authors    Kyeong Soo (Joseph) Kim <k.s.kim@swansea.ac.uk>
+///             Michael Madume <742363@swansea.ac.uk>
+///             Derrick Chow Yiu Fai <717488@swansea.ac.uk>
 /// @date       2012-02-21
 ///
 /// @brief      Main part of the micro mouse program
@@ -8,7 +10,7 @@
 /// @remarks    This program is based on Dr Tim Davies' assembly version of
 ///             micro mouse program and the C port of it by Mr Gareth Evans.
 ///
-/// @copyright  Copyright (C) 2012 Swansea University. All rights reserved.
+/// @copyright  Copyright (C) 2012-2014 Swansea University. All rights reserved.
 ///
 /// @copyright  This software is written and distributed under the GNU General
 ///             Public License Version 2 (http://www.gnu.org/licenses/gpl-2.0.html).
