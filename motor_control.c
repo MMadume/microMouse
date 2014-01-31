@@ -1,6 +1,7 @@
 ///
 /// @file       motor_control.c
 /// @author     Kyeong Soo (Joseph) Kim <k.s.kim@swansea.ac.uk>
+///             Madume Michael <742363@swansea.ac.uk>
 /// @date       2012-02-21
 ///
 /// @brief      Implements functions for motor control.
