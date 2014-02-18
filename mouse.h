@@ -97,6 +97,7 @@ typedef enum {
 //@{
 #define infraredFrontLeft   PTAD_PTAD7
 #define infraredFrontRight  PTAD_PTAD6
+#define infraredRear        PTAD_PTAD5
 //@}
 
 /// @name Line Following sensors

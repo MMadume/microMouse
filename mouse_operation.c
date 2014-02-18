@@ -38,35 +38,44 @@ void AvoidObstacle()
             }
             else if (infraredFrontLeft && !infraredFrontRight) {
                 // left sensor detects; avoid left obstacle
+                ControlMouse(MOUSE_ACTION_TURNRIGHT) ;
 
             }
             else if (!infraredFrontLeft && infraredFrontRight) {
                 // right sensor detects; avoid right obstacle
-
+                ControlMouse(MOUSE_ACTION_TURNLEFT) ;
             }
             else {
                 // both sensors detect; avoid front obstacle
                 ControlMouse(MOUSE_ACTION_STOP);
+                Delay (800);
                 ControlMouse(MOUSE_ACTION_REVERSE);
+                Delay (800);
                 ControlMouse(MOUSE_ACTION_TURNAROUND);	// 180 dgree turn
             }
         }
         else if (touchBarFrontLeft && !touchBarFrontRight) {
             // left bar is touched; avoid left obstacle
             ControlMouse(MOUSE_ACTION_STOP);
+            Delay (800);
             ControlMouse(MOUSE_ACTION_REVERSE);
+            Delay (800);
             ControlMouse(MOUSE_ACTION_TURNRIGHT);
         }
         else if (!touchBarFrontLeft && touchBarFrontRight) {
             // right bar is touched; avoid right obstacle
             ControlMouse(MOUSE_ACTION_STOP);
+            Delay (800);
             ControlMouse(MOUSE_ACTION_REVERSE);
+            Delay (800);
             ControlMouse(MOUSE_ACTION_TURNLEFT);
         }
         else {
             // both bars are touched; avoid front obstacle
             ControlMouse(MOUSE_ACTION_STOP);
+            Delay (800);
             ControlMouse(MOUSE_ACTION_REVERSE);
+            Delay (800);
             ControlMouse(MOUSE_ACTION_TURNAROUND);	// 180 dgree turn
         }
     } // end of for() loop
@@ -157,7 +166,7 @@ void Debug()
     SCISendStr("D\tDisplay ADC value 7 through 0\r\n");
     SCISendStr("P\tDisplay PTA as binary number\r\n");
 
-  while (1) {
+   while (1) {
         // display prompt and wait for a user input
         SCIDisplayPrompt();
         command = SCIGetChar();
@@ -218,8 +227,8 @@ void Debug()
             case 'V':
                 break;
             case 'B':
-                break;
-            case '?':
+                break;   
+                
                 break;
             default:
                 break;
@@ -236,20 +245,20 @@ void Test()
   while (1) {
     ControlMouse(MOUSE_ACTION_FORWARD);
     Delay(opDelay);
-  /*
-    ControlMouse(MOUSE_ACTION_FORWARD);
-    Delay(opDelay);
+    
     ControlMouse(MOUSE_ACTION_REVERSE);
     Delay(opDelay);
+    
     ControlMouse(MOUSE_ACTION_TURNLEFT);
     Delay(opDelay);
     ControlMouse(MOUSE_ACTION_TURNRIGHT);
     Delay(opDelay);
     ControlMouse(MOUSE_ACTION_TURNAROUND);
     Delay(opDelay);
+    
     ControlMouse(MOUSE_ACTION_STOP);
     Delay(opDelay);
-    */
+    
   }
 }
 
