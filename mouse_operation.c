@@ -39,11 +39,14 @@ void AvoidObstacle()
             else if (infraredFrontLeft && !infraredFrontRight) {
                 // left sensor detects; avoid left obstacle
                 ControlMouse(MOUSE_ACTION_TURNRIGHT) ;
+                Delay (800);
+                
 
             }
             else if (!infraredFrontLeft && infraredFrontRight) {
                 // right sensor detects; avoid right obstacle
                 ControlMouse(MOUSE_ACTION_TURNLEFT) ;
+                Delay (800);
             }
             else {
                 // both sensors detect; avoid front obstacle
@@ -52,6 +55,7 @@ void AvoidObstacle()
                 ControlMouse(MOUSE_ACTION_REVERSE);
                 Delay (800);
                 ControlMouse(MOUSE_ACTION_TURNAROUND);	// 180 dgree turn
+                Delay (800);
             }
         }
         else if (touchBarFrontLeft && !touchBarFrontRight) {
@@ -61,6 +65,7 @@ void AvoidObstacle()
             ControlMouse(MOUSE_ACTION_REVERSE);
             Delay (800);
             ControlMouse(MOUSE_ACTION_TURNRIGHT);
+            Delay (800);
         }
         else if (!touchBarFrontLeft && touchBarFrontRight) {
             // right bar is touched; avoid right obstacle
@@ -69,6 +74,7 @@ void AvoidObstacle()
             ControlMouse(MOUSE_ACTION_REVERSE);
             Delay (800);
             ControlMouse(MOUSE_ACTION_TURNLEFT);
+            Delay (800);
         }
         else {
             // both bars are touched; avoid front obstacle
@@ -77,6 +83,7 @@ void AvoidObstacle()
             ControlMouse(MOUSE_ACTION_REVERSE);
             Delay (800);
             ControlMouse(MOUSE_ACTION_TURNAROUND);	// 180 dgree turn
+            Delay (800);
         }
     } // end of for() loop
 }
@@ -240,7 +247,7 @@ void Debug()
 // simple test mode for testing functions
 void Test()
 {
-  int opDelay = 10000;
+  int opDelay = 1000;
   
   while (1) {
     ControlMouse(MOUSE_ACTION_FORWARD);
