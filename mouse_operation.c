@@ -38,52 +38,56 @@ void AvoidObstacle()
             }
             else if (infraredFrontLeft && !infraredFrontRight) {
                 // left sensor detects; avoid left obstacle
+                ControlMouse(MOUSE_ACTION_STOP);
+                Delay (40);
                 ControlMouse(MOUSE_ACTION_TURNLEFT) ;
-                Delay (800);
+                Delay (250);
                 
 
             }
             else if (!infraredFrontLeft && infraredFrontRight) {
                 // right sensor detects; avoid right obstacle
+                 ControlMouse(MOUSE_ACTION_STOP);
+                Delay (40);
                ControlMouse(MOUSE_ACTION_TURNRIGHT) ;
-                Delay (800);
+                Delay (250);
             }
             else {
                 // both sensors detect; avoid front obstacle
                 ControlMouse(MOUSE_ACTION_STOP);
-                Delay (800);
+                Delay (100);
                 ControlMouse(MOUSE_ACTION_REVERSE);
-                Delay (800);
+                Delay (400);
                 ControlMouse(MOUSE_ACTION_TURNAROUND);	// 180 dgree turn
-                Delay (800);
+                Delay (250);
             }
         }
         else if (touchBarFrontLeft && !touchBarFrontRight) {
             // left bar is touched; avoid left obstacle
             ControlMouse(MOUSE_ACTION_STOP);
-            Delay (800);
+            Delay (100);
             ControlMouse(MOUSE_ACTION_REVERSE);
-            Delay (800);
+            Delay (400);
             ControlMouse(MOUSE_ACTION_TURNLEFT);
-            Delay (800);
+            Delay (250);
         }
         else if (!touchBarFrontLeft && touchBarFrontRight) {
             // right bar is touched; avoid right obstacle
             ControlMouse(MOUSE_ACTION_STOP);
-            Delay (800);
+            Delay (100);
             ControlMouse(MOUSE_ACTION_REVERSE);
-            Delay (800);
+            Delay (400);
             ControlMouse(MOUSE_ACTION_TURNRIGHT);
-            Delay (800);
+            Delay (250);
         }
         else {
             // both bars are touched; avoid front obstacle
             ControlMouse(MOUSE_ACTION_STOP);
-            Delay (800);
+            Delay (100);
             ControlMouse(MOUSE_ACTION_REVERSE);
-            Delay (800);
+            Delay (400);
             ControlMouse(MOUSE_ACTION_TURNAROUND);	// 180 dgree turn
-            Delay (800);
+            Delay (250);
         }
     } // end of for() loop
 }
@@ -109,17 +113,27 @@ void LineFollowing ()
             }
             else if (infraredFrontLeft) {
                 // left sensor detects; avoid left obstacle
+                ControlMouse(MOUSE_ACTION_STOP);
+                Delay (40);
+                ControlMouse(MOUSE_ACTION_TURNLEFT);
+            Delay (100);
 
             }
             else if (infraredFrontRight) {
                 // right sensor detects; avoid right obstacle
-
+                ControlMouse(MOUSE_ACTION_STOP);
+                Delay (40);
+                 ControlMouse(MOUSE_ACTION_TURNRIGHT);
+            Delay (100);
             }
             else {
                 // both sensors detect; avoid front obstacle
                 ControlMouse(MOUSE_ACTION_STOP);
+                Delay (100);
                 ControlMouse(MOUSE_ACTION_REVERSE);
+                Delay (100);
                 ControlMouse(MOUSE_ACTION_TURNAROUND);	// 180 dgree turn
+                Delay (270);
             }
         }
         else if (touchBarFrontLeft) {
